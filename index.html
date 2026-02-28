@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeScout — Pokémon Card Scanner for iPhone</title>
+  <meta name="description" content="Point your camera at any Pokémon card. Get instant ID, live market price, and collection tracking. Free on iPhone.">
+  <meta property="og:title" content="PokeScout — Pokémon Card Scanner">
+  <meta property="og:description" content="Point. Scan. Know. The iPhone app for Pokémon TCG collectors.">
+  <meta property="og:image" content="/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0D0D1A;
+      --surface: #1A1A2E;
+      --surface2: #252540;
+      --accent: #6366F1;
+      --gold: #FFD700;
+      --text: #FFFFFF;
+      --text2: #9CA3AF;
+      --text3: #4B5563;
+      --success: #34D399;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.5;
+    }
+
+    .container { max-width: 480px; margin: 0 auto; padding: 0 24px; }
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px 40px;
+      background: radial-gradient(ellipse at 50% 30%, #1a1a40 0%, var(--bg) 70%);
+    }
+
+    .pokeball {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, var(--accent) 50%, var(--surface) 50%);
+      border: 3px solid #333;
+      position: relative;
+      margin-bottom: 24px;
+      box-shadow: 0 0 40px rgba(99,102,241,0.3);
+    }
+    .pokeball::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; height: 3px;
+      background: #333;
+    }
+    .pokeball::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid #333;
+    }
+
+    h1 { font-size: 48px; font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
+    .tagline { font-size: 22px; font-weight: 600; color: var(--accent); margin-bottom: 16px; }
+    .subtitle { font-size: 16px; color: var(--text2); max-width: 320px; margin-bottom: 36px; }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.9; }
+    .cta-sub { font-size: 13px; color: var(--text3); }
+
+    .section { padding: 60px 24px; max-width: 480px; margin: 0 auto; }
+    .section h2 { font-size: 26px; font-weight: 800; margin-bottom: 32px; text-align: center; }
+
+    .steps { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .step { flex: 1; min-width: 120px; text-align: center; }
+    .step-icon { font-size: 40px; margin-bottom: 10px; }
+    .step-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .step-desc { font-size: 13px; color: var(--text2); }
+
+    .features { padding: 0 24px 60px; max-width: 480px; margin: 0 auto; }
+    .features h2 { font-size: 26px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .feature-card {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 16px;
+      border: 1px solid var(--surface2);
+    }
+    .feature-emoji { font-size: 24px; margin-bottom: 8px; }
+    .feature-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .feature-desc { font-size: 12px; color: var(--text2); }
+
+    .proof { padding: 0 24px 60px; max-width: 480px; margin: 0 auto; text-align: center; }
+    .quote {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text2);
+    }
+    .quote-author { font-size: 13px; color: var(--text3); margin-top: 8px; font-style: normal; }
+
+    .footer-cta {
+      padding: 40px 24px 60px;
+      text-align: center;
+      border-top: 1px solid var(--surface2);
+    }
+    .footer-cta h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .footer-cta p { color: var(--text2); margin-bottom: 24px; font-size: 15px; }
+    .footer-note { font-size: 12px; color: var(--text3); margin-top: 16px; }
+
+    .price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-top: 16px;
+    }
+
+    @media (min-width: 480px) {
+      .hero { padding-top: 80px; }
+      h1 { font-size: 56px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="pokeball"></div>
+    <h1>PokeScout</h1>
+    <p class="tagline">Point. Scan. Know.</p>
+    <p class="subtitle">The iPhone app for Pokémon TCG collectors. Scan any card — instant ID + live market price.</p>
+    <a class="cta-btn" href="https://apps.apple.com/app/pokescout/id000000000">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      Download Free on App Store
+    </a>
+    <p class="cta-sub">10 free scans/day · Pro from $2.99/mo</p>
+    <div class="price-badge">💰 18,000+ cards · Live prices</div>
+  </section>
+
+  <section class="section">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="step-icon">📷</div><div class="step-title">Scan</div><div class="step-desc">Point camera at any card</div></div>
+      <div class="step"><div class="step-icon">💰</div><div class="step-title">Price</div><div class="step-desc">Instant market value</div></div>
+      <div class="step"><div class="step-icon">📦</div><div class="step-title">Collect</div><div class="step-desc">Track your portfolio</div></div>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Everything You Need</h2>
+    <div class="feature-grid">
+      <div class="feature-card"><div class="feature-emoji">✨</div><div class="feature-title">Card Recognition</div><div class="feature-desc">18k card database, works offline</div></div>
+      <div class="feature-card"><div class="feature-emoji">💰</div><div class="feature-title">Live Prices</div><div class="feature-desc">Real-time TCGPlayer market data</div></div>
+      <div class="feature-card"><div class="feature-emoji">🃏</div><div class="feature-title">Collection Value</div><div class="feature-desc">Portfolio worth at a glance</div></div>
+      <div class="feature-card"><div class="feature-emoji">🔔</div><div class="feature-title">Price Alerts</div><div class="feature-desc">Notify when cards hit your price</div></div>
+      <div class="feature-card"><div class="feature-emoji">🤝</div><div class="feature-title">Trade Binder</div><div class="feature-desc">Public profile to share trades</div></div>
+      <div class="feature-card"><div class="feature-emoji">🎬</div><div class="feature-title">Share Pulls</div><div class="feature-desc">TikTok-ready reveal videos</div></div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="quote">
+      "Finally an app that actually recognizes holofoils"
+      <div class="quote-author">— @pokefan_xx, r/PokemonTCG</div>
+    </div>
+  </section>
+
+  <footer class="footer-cta">
+    <h2>Start Scanning Free</h2>
+    <p>Join thousands of Pokémon collectors tracking their cards with PokeScout.</p>
+    <a class="cta-btn" href="https://apps.apple.com/app/pokescout/id000000000">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      Download on App Store
+    </a>
+    <p class="footer-note">pokescoutapp.com · Built for collectors</p>
+  </footer>
+</body>
+</html>
