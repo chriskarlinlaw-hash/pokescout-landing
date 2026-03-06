@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — PokeScout</title>
+<meta name="description" content="PokeScout privacy policy. We collect minimal data and never sell your information.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
+    background: #ffffff;
+    color: #1a1a2e;
+    line-height: 1.7;
+    padding: 0;
+  }
+
+  /* Nav */
+  nav {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #0066cc, #0099ff);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .nav-logo-text {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1a1a2e;
+  }
+
+  .nav-back {
+    font-size: 13px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+    border-bottom: 1px solid #e0e0e0;
+    padding: 40px 20px 36px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #e8f4fd;
+    border: 1px solid #0066cc;
+    color: #0066cc;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-sub {
+    color: #555;
+    font-size: 14px;
+    max-width: 500px;
+    margin: 0 auto 16px;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 12px;
+    color: #888;
+  }
+
+  .hero-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Content */
+  .content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+
+  .toc {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .toc ol {
+    padding-left: 18px;
+    margin: 0;
+  }
+
+  .toc li {
+    margin-bottom: 4px;
+  }
+
+  .toc a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .toc a:hover { text-decoration: underline; }
+
+  section {
+    margin-bottom: 36px;
+  }
+
+  .section-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0066cc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+
+  li {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+
+  .highlight-box {
+    background: #f0f7ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+
+  .highlight-box.green {
+    background: #f0fff4;
+    border-color: #b3f0c8;
+  }
+
+  .highlight-box.yellow {
+    background: #fffbf0;
+    border-color: #ffe082;
+  }
+
+  .highlight-box p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .highlight-box p small {
+    display: block;
+    font-weight: 400;
+    color: #555;
+    margin-top: 3px;
+    font-size: 12px;
+  }
+
+  .checkmark-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .checkmark-list li {
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .checkmark-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00a550;
+    font-weight: 900;
+    font-size: 13px;
+  }
+
+  .cross-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .cross-list li {
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .cross-list li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: #e53935;
+    font-weight: 900;
+    font-size: 13px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+
+  thead tr {
+    background: #f5f5f7;
+  }
+
+  th {
+    padding: 9px 12px;
+    text-align: left;
+    font-weight: 700;
+    color: #1a1a2e;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+    vertical-align: top;
+  }
+
+  td a { color: #0066cc; }
+
+  .contact-card {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contact-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #1a1a2e;
+  }
+
+  .contact-card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .contact-email {
+    display: inline-block;
+    background: #0066cc;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* Footer */
+  footer {
+    background: #1a1a2e;
+    color: #aaa;
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 12px;
+  }
+
+  footer a { color: #aaa; }
+  footer strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">🎴</div>
+    <span class="nav-logo-text">PokeScout</span>
+  </a>
+  <a href="/" class="nav-back">← Back to Home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="hero-sub">We built PokeScout with privacy first. Minimal data collection, no ads, no selling your information.</p>
+  <div class="hero-meta">
+    <span>🎴 PokeScout: Card Scanner</span>
+    <span>📅 Last updated: March 1, 2026</span>
+    <span>👤 Developer: Chris Karlin</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- Quick summary -->
+  <div class="highlight-box green">
+    <p>
+      🔒 TL;DR: PokeScout is designed to work mostly on-device. We don't sell your data, don't run ads, and don't require an account.
+      <small>Card scans and your collection stay on your phone unless you opt into Trade Binder (a public feature).</small>
+    </p>
+  </div>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#collect">Information We Collect</a></li>
+      <li><a href="#not-collect">Information We Do NOT Collect</a></li>
+      <li><a href="#how-used">How We Use Information</a></li>
+      <li><a href="#third-parties">Third-Party Services</a></li>
+      <li><a href="#purchases">Purchases &amp; Subscriptions</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#rights">Your Rights &amp; Data Deletion</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <section id="collect">
+    <div class="section-num">01</div>
+    <h2>Information We Collect</h2>
+    <p>PokeScout is designed to minimize data collection. Here is exactly what we do and don't collect:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Collected?</th>
+          <th>Where Stored</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Card scan images</strong></td>
+          <td>❌ No</td>
+          <td>Processed on-device only</td>
+          <td>Card identification uses on-device ML — images never leave your phone</td>
+        </tr>
+        <tr>
+          <td><strong>Collection data</strong></td>
+          <td>✅ Local only</td>
+          <td>Your device (SwiftData)</td>
+          <td>Tracking your collection value and history</td>
+        </tr>
+        <tr>
+          <td><strong>Trade Binder profile</strong></td>
+          <td>✅ Server (optional)</td>
+          <td>Vercel KV (opt-in)</td>
+          <td>Public trade profile — username + card listings you choose to share</td>
+        </tr>
+        <tr>
+          <td><strong>Price data requests</strong></td>
+          <td>⚡ Transient</td>
+          <td>Not stored</td>
+          <td>Anonymous API calls to TCGPlayer to fetch card prices — no personal data sent</td>
+        </tr>
+        <tr>
+          <td><strong>Crash reports</strong></td>
+          <td>✅ Anonymous</td>
+          <td>Apple Xcode Organizer</td>
+          <td>Fixing bugs — Apple's standard crash reporting, no personal data included</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box yellow">
+      <p>📝 Note on Trade Binder
+        <small>Trade Binder is an opt-in feature. If you create a public trade profile, your chosen username and the cards you list are stored on our servers and visible to anyone with your link. You can delete this data at any time by emailing us.</small>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="not-collect">
+    <div class="section-num">02</div>
+    <h2>Information We Do NOT Collect</h2>
+    <ul class="cross-list">
+      <li>We do not require account creation — no name, email, or phone number needed</li>
+      <li>We do not track your location</li>
+      <li>We do not use advertising SDKs (no Google Ads, Meta Pixel, etc.)</li>
+      <li>We do not use third-party analytics (no Mixpanel, Amplitude, Firebase Analytics)</li>
+      <li>We do not sell or share your data with data brokers or advertisers</li>
+      <li>We do not collect browsing history or cross-app behavior</li>
+      <li>We do not store card images or photos you scan</li>
+    </ul>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="how-used">
+    <div class="section-num">03</div>
+    <h2>How We Use Information</h2>
+    <p>The limited data we collect is used only to make PokeScout work:</p>
+    <ul class="checkmark-list">
+      <li><strong>Collection data</strong> — stored locally to show you your collection value, history, and stats</li>
+      <li><strong>Trade Binder data</strong> — stored on our servers to power your public trade profile URL</li>
+      <li><strong>Crash reports</strong> — used to identify and fix bugs in the app</li>
+      <li><strong>Price API calls</strong> — anonymous requests to fetch live card prices; no personal data included</li>
+    </ul>
+    <p>We do not use any collected data for advertising, profiling, or any purpose beyond operating the app.</p>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="third-parties">
+    <div class="section-num">04</div>
+    <h2>Third-Party Services</h2>
+    <p>PokeScout uses a small number of third-party services. Each has its own privacy policy:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>Data Shared</th>
+          <th>Privacy Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>TCGPlayer API</strong></td>
+          <td>Live card price data</td>
+          <td>Card names only (no personal data)</td>
+          <td><a href="https://www.tcgplayer.com/privacy" target="_blank">tcgplayer.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple StoreKit</strong></td>
+          <td>Pro subscription payments</td>
+          <td>Apple processes payments; we receive only purchase confirmation</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Vercel</strong></td>
+          <td>Trade Binder backend (optional feature)</td>
+          <td>Username + trade card list (only if you opt in to Trade Binder)</td>
+          <td><a href="https://vercel.com/legal/privacy-policy" target="_blank">vercel.com/legal/privacy-policy</a></td>
+        </tr>
+        <tr>
+          <td><strong>pokemontcg.io</strong></td>
+          <td>High-resolution card images</td>
+          <td>Card IDs only (no personal data)</td>
+          <td><a href="https://pokemontcg.io" target="_blank">pokemontcg.io</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="purchases">
+    <div class="section-num">05</div>
+    <h2>Purchases &amp; Subscriptions</h2>
+    <p>PokeScout Pro subscriptions are handled entirely by Apple via StoreKit. We never see your payment information.</p>
+    <p>When you subscribe:</p>
+    <ul>
+      <li>Apple processes the payment and manages your subscription</li>
+      <li>We receive a confirmation that a valid subscription exists — nothing more</li>
+      <li>You can manage or cancel your subscription at any time via <strong>Settings → Apple ID → Subscriptions</strong> on your iPhone</li>
+    </ul>
+    <div class="highlight-box">
+      <p>💳 Your payment details (card number, billing address) are never stored by PokeScout. Apple handles all of this.
+        <small>See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> for details on how they handle payment data.</small>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="children">
+    <div class="section-num">06</div>
+    <h2>Children's Privacy</h2>
+    <p>PokeScout is rated <strong>4+</strong> on the App Store and is appropriate for all ages, including children.</p>
+    <p>We do not knowingly collect personal information from children under 13. Since we don't require account creation, there is no registration data to collect.</p>
+    <p>If a child uses the Trade Binder feature (which requires choosing a username), parents can request deletion of that data by contacting us at the email below. The Trade Binder can also be avoided entirely — it is an optional feature.</p>
+    <p>If you believe a child has provided us personal information, please contact us at <a href="mailto:pax.operations@gmail.com">pax.operations@gmail.com</a> and we will delete it promptly.</p>
+  </section>
+
+  <!-- Section 7 -->
+  <section id="rights">
+    <div class="section-num">07</div>
+    <h2>Your Rights &amp; Data Deletion</h2>
+    <p>You have full control over your data:</p>
+    <ul class="checkmark-list">
+      <li><strong>Collection data</strong> — stored only on your device. Delete it by uninstalling PokeScout.</li>
+      <li><strong>Trade Binder data</strong> — stored on our servers. Request deletion anytime by emailing us.</li>
+      <li><strong>Crash reports</strong> — anonymous; cannot be linked to you.</li>
+    </ul>
+    <p>California residents (CCPA) and EU/UK residents (GDPR) may have additional rights. Since we don't collect personal information beyond optional Trade Binder usernames, these requests are simple: just email us and we'll delete your Trade Binder data within 5 business days.</p>
+  </section>
+
+  <!-- Section 8 -->
+  <section id="changes">
+    <div class="section-num">08</div>
+    <h2>Changes to This Policy</h2>
+    <p>If we make material changes to this privacy policy, we will update this page with a new "Last updated" date. For significant changes, we may also display an in-app notification.</p>
+    <p>Continued use of PokeScout after changes constitutes your acceptance of the revised policy. If you disagree with changes, you may delete the app.</p>
+  </section>
+
+  <!-- Section 9 / Contact -->
+  <section id="contact">
+    <div class="section-num">09</div>
+    <h2>Contact</h2>
+    <p>Privacy questions, data deletion requests, or general concerns — we're here:</p>
+    <div class="contact-card">
+      <h3>🎴 PokeScout Privacy</h3>
+      <p>Developer: Chris Karlin · Response within 2 business days</p>
+      <a href="mailto:pax.operations@gmail.com" class="contact-email">pax.operations@gmail.com</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p><strong>PokeScout: Card Scanner</strong> · Privacy Policy · Last updated March 1, 2026</p>
+  <p style="margin-top:6px;">PokeScout is not affiliated with The Pokémon Company, Nintendo, or TCGPlayer. Pokémon and all related names are trademarks of their respective owners.</p>
+  <p style="margin-top:6px;"><a href="/">← Back to pokescoutapp.com</a></p>
+</footer>
+
+</body>
+</html>
